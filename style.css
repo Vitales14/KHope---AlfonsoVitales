@@ -18,7 +18,7 @@
     "carroussel carroussel carroussel"  
     "footer  footer  footer";
     grid-template-columns: auto auto auto;
-    grid-template-rows: 4rem 15rem 10rem 25rem 13rem;
+    grid-template-rows: 4rem 15rem 10rem auto auto;
 }
 
 .header {
@@ -88,7 +88,7 @@
     "header  header  header"
     "mainServicios  mainServicios  mainServicios" 
     "footer  footer  footer";
-    grid-template-rows: auto 35rem auto;
+    grid-template-rows: auto 36.5rem auto;
     grid-template-columns: auto auto auto;
 }    
 
@@ -98,7 +98,7 @@
     "header  header  header"
     "mainFaq  mainFaq  mainFaq" 
     "footer  footer  footer";
-    grid-template-rows: auto 29rem auto;
+    grid-template-rows: auto 35rem auto;
     grid-template-columns: auto auto auto;
 }    
 
@@ -108,40 +108,13 @@
     "header  header  header"
     "mainContacto  mainContacto  mainContacto" 
     "footer  footer  footer";
-    grid-template-rows: 4rem 35rem 13rem;
+    grid-template-rows: auto 35rem auto;
     grid-template-columns: auto auto auto;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------HEADER-------------------------------------------------------------*/
+/*----------------------------------------------HEADER ESTILIZADO CON BOOTSTRAP---------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------------------*/
-
-.nav ul li a {
-    text-decoration: none;
-    color: black;
-}
-
-.nav {
-    padding: 1rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.nav ul li {
-    display: inline;
-    padding-right: 11.25rem;
-}
-
-.nav a img {
-    width: 100%;
-    display: inline-block;
-}
-
-.real {
-    width: 3%;
-}
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------MAIN--------------------------------------------------------------*/
@@ -150,17 +123,17 @@
 /* INICIO */
 
 .oso {
-    width: 20rem;
+    width: 40rem;
     padding-left: 40%;
 }
 
 .hola {
-    width: 30rem;
+    width: 35rem;
     padding-right: 20%;
 }
 
 .envios {
-    width: 30rem;
+    width: 35rem;
     padding-right: 20%;
 }
 
@@ -168,12 +141,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1108.jpg?t=st=1657895497~exp=1657896097~hmac=46c5c8f7120f9ee7da73786d3d7a7af0634b1c1e69e6371eccbcbf4550ccc346&w=996);
-    border: 1px solid black;
-    border-radius: 16px;
     width: 75%;
     height: 70%;
     padding: 1rem;
+}
+
+.photo {
+    height: 23rem;
+    width: 46rem;
 }
 
 /* MÉTODO DE COMPRA */
@@ -213,19 +188,25 @@
     color: black;
 }
 
+.gridMetodo{
+    padding-top: 2rem;
+}
+
 /* SERVICIOS */
 
 .mainServicios {
     grid-area: mainServicios;
     background-color: white;
     height: 10rem;
+    padding-left: 7rem;
+    padding-right: 3.5rem;
 }
 
 .mainServicios .galeria {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 4rem;
     margin: 1%;
 }
 
@@ -246,6 +227,7 @@
 details{
     background: #739eb9;
     padding: 1rem;
+    padding-left: 4rem;
     margin: 2rem;
     border-radius: 10px;
     cursor: pointer;
@@ -262,11 +244,9 @@ details{
 }
 
 .mainContacto div section form {
-    background-image: url(https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1108.jpg?t=st=1657895497~exp=1657896097~hmac=46c5c8f7120f9ee7da73786d3d7a7af0634b1c1e69e6371eccbcbf4550ccc346&w=996);
     border-radius: 10px;
     width: 30rem;
     height: 22rem;
-    border: 2px solid black;
     padding: 1rem;
     margin: 1.5rem;
 }
@@ -283,7 +263,7 @@ details{
 
 .mainContacto div section h1 { 
     line-height: 1.5;
-    margin-left: 1.5rem;
+    padding-left: 6rem;
     margin-top: 1rem;
 }
 
@@ -297,8 +277,8 @@ details{
 
 .formulario {
     justify-self: self-start;
+    padding-left: 6rem;
 }
-
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------FOOTER-------------------------------------------------------------*/
@@ -309,10 +289,12 @@ details{
     width: 25rem;
     padding-top: 2rem;
     text-align: justify;
+    padding-top: 2rem;
 }
 
 .contacto {
     width: 20rem;
+    padding-top: 2rem;
     padding-top: 2rem;
 }
 
@@ -321,14 +303,15 @@ details{
 }
 
 .red {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 7.3rem;
+    height: 5.3rem;
     padding-right: 1.75rem;
 }
 
 p, .listaContacto {
     line-height: 2;
     list-style-type: none;
+    transform: translateX(-2rem);
 }
 
 div h3 {
@@ -343,6 +326,11 @@ div ul li, .info p {
     color: white;
 }
 
+.contacto h3, .info h3 {
+    transform: translateX(4rem);
+}
+
+
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------ANIMACIONES-----------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------------------*/
@@ -352,7 +340,7 @@ div ul li, .info p {
     transition: filter 0.4s;
 }
 
-.nav ul li a:hover {
+.navbar ul li a:hover {
     background-color: #3396d3;
     border-radius: 8px;
     transition: background-color, box-shadow 0.5s;
@@ -368,6 +356,10 @@ details:hover{
     box-shadow: 0px 1px 10px;
 }
 
+.products:hover{
+    transform: scale(1.5);
+    transition: transform 0.7s;
+}
 
 /*------------------------------------------------------*/
 /*-----------------------CELULAR------------------------*/
@@ -386,17 +378,11 @@ details:hover{
         align-items:center;
     }
 
-    .nav ul{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
 
     /* INICIO */
     .gridContainer {
         display: grid;
-        grid-template-rows: 10rem auto auto 15rem auto;
+        grid-template-rows: auto auto auto 15rem auto;
         grid-template-columns: 100%;
         grid-template-areas: 
         "header"
@@ -419,18 +405,20 @@ details:hover{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url(https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1108.jpg?t=st=1657895497~exp=1657896097~hmac=46c5c8f7120f9ee7da73786d3d7a7af0634b1c1e69e6371eccbcbf4550ccc346&w=996);
-        border: 1px solid black;
-        border-radius: 16px;
         width: 65%;
         height: 60%;
         margin: 1.5rem;
     }
 
+    .photo {
+        height: 13rem;
+        width: 26rem;
+    }
+
     /* MÉTODO DE COMPRA */
     .gridContainerMdc {
         display: grid;
-        grid-template-rows: 10rem auto auto;
+        grid-template-rows: auto auto 23.5rem;
         grid-template-columns: 100%;
         grid-template-areas: 
         "header"
@@ -457,7 +445,7 @@ details:hover{
 
     .gridContainerServicios {
         display: grid;
-        grid-template-rows: auto 185rem auto;
+        grid-template-rows: auto 133rem 23.5rem;
         grid-template-columns: 100%;
         grid-template-areas: 
         "header"
@@ -487,7 +475,7 @@ details:hover{
 
     .gridContainerFaq {
         display: grid;
-        grid-template-rows: 10rem 30rem auto;
+        grid-template-rows: auto auto 23.5rem;
         grid-template-columns: 100%;
         grid-template-areas: 
         "header"
@@ -499,7 +487,7 @@ details:hover{
 
     .gridContainerContacto {
         display: grid;
-        grid-template-rows: 10rem auto auto;
+        grid-template-rows: auto auto 23.5rem;
         grid-template-columns: 100%;
         grid-template-areas: 
         "header"
@@ -517,11 +505,16 @@ details:hover{
 
     .mainContacto div section form {
         width: 20rem;
+        transform: translateX(-4rem);
     }
 
     .mapa {
         overflow: scroll;
         width: 75%;
         height: 75%;
+    }
+
+    .formulario h1{
+        transform: translateX(-4rem);
     }
 }
