@@ -1,8 +1,7 @@
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------- GRID -----------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------------------*/
-
-                                                        /* INICIO */
+/* INICIO */
 .gridContainer {
     display: grid;
     grid-template-areas: 
@@ -16,47 +15,27 @@
 }
 
 .header {
-    background-color: $azulClaro;
-    grid-area: header;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include grid(header, center);
 }
 
 .main {
-    background-color: $azulClaro;
-    grid-area: main;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include grid(main, space-around);
 }
 
 .mainE {
-    background-color: $azulClaro;
-    grid-area: mainE;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include grid(mainE, center);
 }
 
 .mainE1 {
-    background-color: $azulClaro;
-    grid-area: mainE1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include grid(mainE1, center);
 }
 
 .carroussel {
-    background-color: $azulClaro;
-    grid-area: carroussel;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include grid(carroussel, center);
 }
 
 .footer {
-    background-color: $purpura;
+    background-color: map-get($colores, purpura);
     grid-area: footer;
     display: flex;
     flex-flow: row nowrap;
@@ -97,11 +76,9 @@
 }    
 
 .gridContainerContacto {
-    display: grid;
+    @extend .gridContainerFaq;
     grid-template-areas: 
     "header  header  header"
     "mainContacto  mainContacto  mainContacto" 
     "footer  footer  footer";
-    grid-template-rows: auto 35rem auto;
-    grid-template-columns: auto auto auto;
 }

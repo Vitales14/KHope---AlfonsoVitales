@@ -1,18 +1,16 @@
-* {
-    margin: 0;
-    padding: 0; 
-    font-family: 'Montserrat', sans-serif;
- }
 
- /* VARIABLES */
- $azulClaro:#99d4e7;
- $azulfuerte:#3396d3;
- $purpura:#5457a1;
+/* UTILITIES */
+ @import "./utilities/maps";
+ @import "./utilities/mixins";
+ @import "./utilities/variables";
 
- @import "grid";
- @import "seccionMain";
- @import "mediaQ";
-
+ /* BASE */
+ @import "./base/reset";
+ 
+ /* LAYOUT */
+ @import "./layouts/grid";
+ @import "./layouts/mediaQ";
+ @import "./layouts/seccionMain";
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------HEADER-------------------------------------------------------------*/
@@ -23,10 +21,10 @@
         li{
             a{
             &:hover {
-                background-color: $azulfuerte;
+                background-color: map-get($colores, azulFuerte);
                 border-radius: 8px;
                 transition: background-color, box-shadow 0.5s;
-                box-shadow: 0px 1px 10px;
+                box-shadow: $sombra;
                 } 
             }
         }
@@ -61,7 +59,6 @@
 .contacto {
     width: 20rem;
     padding-top: 2rem;
-    padding-top: 2rem;
 
     h3 {
         transform: translateX(4rem);
@@ -76,16 +73,29 @@
 
 .redes {
     padding-top: 2rem; 
-}
 
-.red {
-    width: 7.3rem;
-    height: 5.3rem;
-    padding-right: 1.75rem;
-
-    &:hover{
-        filter: invert(77%) sepia(55%) saturate(206%) hue-rotate(150deg) brightness(96%) contrast(88%);
-        transition: filter 0.4s;
+    .red_fb {
+        width: 7.3rem;
+        height: 5.3rem;
+        padding-right: 1.75rem;
+    
+        &:hover{
+            filter: map-get($redes, facebook);
+        }
+    }
+    
+    .red_ig{
+        @extend .red_fb;
+        &:hover{
+            filter: map-get($redes, instagram);
+        }
+    }
+    
+    .red_ws{
+        @extend .red_fb;
+        &:hover{
+            filter: map-get($redes, whatsapp);
+        }
     }
 }
 
